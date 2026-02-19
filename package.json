@@ -7,7 +7,7 @@
                 "node": "20.x",
                 "npm": ">=7.0.0"
         },
-                "dependencies": {
+        "dependencies": {
                 "@distube/ytdl-core": "^4.13.3",
                 "axios": "^1.4.0",
                 "bcrypt": "^5.0.1",
@@ -55,7 +55,6 @@
                 "ws3-fca": "latest",
                 "yt-search": "^2.13.1"
         },
-
         "scripts": {
                 "start": "node index.js",
                 "dev": "NODE_ENV=development node index.js",
