@@ -2,55 +2,55 @@
   {
     "key": "datr",
     "value": "uHklaTy4AD6R1n0X0gO6QKRZ",
-    "expires": "2026-05-20T16:48:13.000Z",
+    "expires": "2026-05-20T16:55:47.000Z",
     "domain": "facebook.com",
     "path": "/",
     "hostOnly": false,
-    "creation": "2026-02-19T16:48:13.219Z",
-    "lastAccessed": "2026-02-19T16:48:18.425Z"
+    "creation": "2026-02-19T16:55:47.793Z",
+    "lastAccessed": "2026-02-19T16:55:50.924Z"
   },
   {
     "key": "fr",
-    "value": "2mUHvOdSirHO494qY.AWeDl6ZycN5uEq0VtOo8Q9vZwU_XxfrDHqYaJY3OpOgeRLMtzIA.BplpAP..AAA.0.0.Bplz7O.AWfHdMI1s0i57okcGJTTLMM9l0Q",
-    "expires": "2026-05-20T16:48:14.000Z",
+    "value": "2mUHvOdSirHO494qY.AWfZq2BGkbuuXA1ak5MWe9KlIrnhBK86yPYUE-SlnFTnkm_I6sM.BplpAP..AAA.0.0.Bpl0CU.AWcnfy5GRy8fKrGDhShfrWnWwiI",
+    "expires": "2026-05-20T16:55:48.000Z",
     "maxAge": 7776000,
     "domain": "facebook.com",
     "path": "/",
     "secure": true,
     "httpOnly": true,
     "hostOnly": false,
-    "creation": "2026-02-19T16:48:13.221Z",
-    "lastAccessed": "2026-02-19T16:48:18.425Z",
+    "creation": "2026-02-19T16:55:47.795Z",
+    "lastAccessed": "2026-02-19T16:55:50.924Z",
     "sameSite": "none"
   },
   {
     "key": "xs",
     "value": "49%3AwgXX3Sr4-Lw2Jg%3A2%3A1771436118%3A-1%3A-1%3A%3AAcxtZnY9W2BcTeyrMQuU0_RUEya2cu0dTtNO6xSjaA",
-    "expires": "2026-05-20T16:48:13.000Z",
+    "expires": "2026-05-20T16:55:47.000Z",
     "domain": "facebook.com",
     "path": "/",
     "hostOnly": false,
-    "creation": "2026-02-19T16:48:13.221Z",
-    "lastAccessed": "2026-02-19T16:48:18.425Z"
+    "creation": "2026-02-19T16:55:47.795Z",
+    "lastAccessed": "2026-02-19T16:55:50.924Z"
   },
   {
     "key": "c_user",
     "value": "61551908307733",
-    "expires": "2026-05-20T16:48:13.000Z",
+    "expires": "2026-05-20T16:55:47.000Z",
     "domain": "facebook.com",
     "path": "/",
     "hostOnly": false,
-    "creation": "2026-02-19T16:48:13.221Z",
-    "lastAccessed": "2026-02-19T16:48:18.425Z"
+    "creation": "2026-02-19T16:55:47.796Z",
+    "lastAccessed": "2026-02-19T16:55:50.924Z"
   },
   {
     "key": "sb",
     "value": "uHklaYGN-_Uw8CalTJoHhhQ6",
-    "expires": "2026-05-20T16:48:13.000Z",
+    "expires": "2026-05-20T16:55:47.000Z",
     "domain": "facebook.com",
     "path": "/",
     "hostOnly": false,
-    "creation": "2026-02-19T16:48:13.222Z",
-    "lastAccessed": "2026-02-19T16:48:18.425Z"
+    "creation": "2026-02-19T16:55:47.796Z",
+    "lastAccessed": "2026-02-19T16:55:50.924Z"
   }
 ]

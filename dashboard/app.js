@@ -260,7 +260,9 @@ module.exports = async (api) => {
                         ? `${process.env.PROJECT_DOMAIN}.glitch.me`
                         : `localhost:${PORT}`}`;
         dashBoardUrl.includes("localhost") && (dashBoardUrl = dashBoardUrl.replace("https", "http"));
-        await server.listen(PORT, HOST);
+        if (!server.listening) {
+                await server.listen(PORT, HOST);
+        }
         utils.log.info("DASHBOARD", `Dashboard is running: ${dashBoardUrl}`);
         if (config.serverUptime.socket.enable == true)
                 require("../bot/login/socketIO.js")(server);
