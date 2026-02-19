@@ -253,13 +253,14 @@ module.exports = async (api) => {
         });
 
         const PORT = process.env.PORT || config.dashBoard.port || config.serverUptime.port || 3001;
+        const HOST = "0.0.0.0";
         let dashBoardUrl = `https://${process.env.REPL_OWNER
                 ? `${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`
                 : process.env.API_SERVER_EXTERNAL == "https://api.glitch.com"
                         ? `${process.env.PROJECT_DOMAIN}.glitch.me`
                         : `localhost:${PORT}`}`;
         dashBoardUrl.includes("localhost") && (dashBoardUrl = dashBoardUrl.replace("https", "http"));
-        await server.listen(PORT);
+        await server.listen(PORT, HOST);
         utils.log.info("DASHBOARD", `Dashboard is running: ${dashBoardUrl}`);
         if (config.serverUptime.socket.enable == true)
                 require("../bot/login/socketIO.js")(server);

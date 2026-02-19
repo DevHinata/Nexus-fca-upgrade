@@ -133,11 +133,7 @@ global.fca = {
   config: config
 };
 
-// Start Health Server if on cloud platform or enabled
-if (process.env.PORT || process.env.NEXUS_ENABLE_HEALTH_SERVER === '1') {
-  const healthServer = new HealthServer();
-  healthServer.start();
-}
+// Health Server disabled - dashboard handles port binding
 const Boolean_Option = [
   "online",
   "selfListen",
