@@ -826,17 +826,31 @@ function formatAttachment(attachments, attachmentIds, attachmentMap, shareMap) {
 
 function formatDeltaMessage(m) {
     var md = m.messageMetadata;
-    var mdata =
-        m.data === undefined ? [] :
-            m.data.prng === undefined ? [] :
-                JSON.parse(m.data.prng);
-    var m_id = mdata.map((/** @type {{ i: any; }} */u) => u.i);
-    var m_offset = mdata.map((/** @type {{ o: any; }} */u) => u.o);
-    var m_length = mdata.map((/** @type {{ l: any; }} */u) => u.l);
+    
+    // FIX: Check for all possible mention keys (prng, mentions, or m_mentions)
+    var rawMentions = m.data?.prng || m.data?.mentions || m.data?.m_mentions;
+    var mdata = [];
+    try {
+        mdata = rawMentions ? JSON.parse(rawMentions) : [];
+    } catch (e) {
+        mdata = [];
+    }
+
     var mentions = {};
     var body = m.body || "";
     var args = body == "" ? [] : body.trim().split(/\s+/);
-    for (var i = 0; i < m_id.length; i++) mentions[m_id[i]] = m.body.substring(m_offset[i], m_offset[i] + m_length[i]);
+
+    // Map properties (Handles 'i' for ID, 'o' for Offset, and 'l' for Length)
+    mdata.forEach(u => {
+        let id = u.i || u.id || u.fbid;
+        let offset = u.o || u.offset;
+        let length = u.l || u.length;
+        
+        if (id && offset !== undefined) {
+            mentions[id.toString()] = body.substring(offset, offset + length);
+        }
+    });
+
     return {
         type: "message",
         senderID: formatID(md.actorFbId.toString()),
@@ -844,7 +858,7 @@ function formatDeltaMessage(m) {
         messageID: md.messageId,
         args: args,
         body: body,
-        attachments: (m.attachments || []).map((/** @type {any} */v) => _formatAttachment(v)),
+        attachments: (m.attachments || []).map((v) => _formatAttachment(v)),
         mentions: mentions,
         timestamp: md.timestamp,
         isGroup: !!md.threadKey.threadFbId,
